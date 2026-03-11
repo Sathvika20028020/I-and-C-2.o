@@ -1,0 +1,55 @@
+[22-Apr-2025 11:44:58 UTC] PHP Fatal error:  Cannot use App\Models\ExelImprtOne as ExelImprtOne because the name is already in use in /home/bqvietlwksha/public_html/integrateddata/app/Http/Controllers/ExelImprtOneController.php on line 6
+[25-Apr-2025 08:30:34 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/bqvietlwksha/public_html/integrateddata/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 411
+[25-Apr-2025 08:30:37 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/bqvietlwksha/public_html/integrateddata/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 411
+[25-Apr-2025 08:38:48 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/bqvietlwksha/public_html/integrateddata/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 411
+[25-Apr-2025 08:42:40 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/bqvietlwksha/public_html/integrateddata/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 411
+[02-May-2025 09:00:43 UTC] PHP Fatal error:  Cannot use App\Models\ExelImprtTwoDemo as ExelImprtTwoDemo because the name is already in use in /home/bqvietlwksha/public_html/integrateddata/app/Http/Controllers/ExelImprtTwoController.php on line 8
+[06-May-2025 05:55:05 UTC] PHP Warning:  require(/home/bqvietlwksha/public_html/integrateddata/vendor/composer/../symfony/polyfill-mbstring/bootstrap.php): Failed to open stream: No such file or directory in /home/bqvietlwksha/public_html/integrateddata/vendor/composer/autoload_real.php on line 41
+[06-May-2025 05:55:05 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/bqvietlwksha/public_html/integrateddata/vendor/composer/../symfony/polyfill-mbstring/bootstrap.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bqvietlwksha/public_html/integrateddata/vendor/composer/autoload_real.php:41
+Stack trace:
+#0 /home/bqvietlwksha/public_html/integrateddata/vendor/composer/autoload_real.php(45): {closure}()
+#1 /home/bqvietlwksha/public_html/integrateddata/vendor/autoload.php(25): ComposerAutoloaderInit88970a0117c062eed55fa8728fc43833::getLoader()
+#2 /home/bqvietlwksha/public_html/integrateddata/index.php(14): require('/home/bqvietlwk...')
+#3 {main}
+  thrown in /home/bqvietlwksha/public_html/integrateddata/vendor/composer/autoload_real.php on line 41
+[06-May-2025 09:39:08 UTC] PHP Warning:  require(/home/bqvietlwksha/public_html/integrateddata/vendor/composer/../symfony/polyfill-mbstring/bootstrap.php): Failed to open stream: No such file or directory in /home/bqvietlwksha/public_html/integrateddata/vendor/composer/autoload_real.php on line 41
+[06-May-2025 09:39:08 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/bqvietlwksha/public_html/integrateddata/vendor/composer/../symfony/polyfill-mbstring/bootstrap.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bqvietlwksha/public_html/integrateddata/vendor/composer/autoload_real.php:41
+Stack trace:
+#0 /home/bqvietlwksha/public_html/integrateddata/vendor/composer/autoload_real.php(45): {closure}()
+#1 /home/bqvietlwksha/public_html/integrateddata/vendor/autoload.php(25): ComposerAutoloaderInit88970a0117c062eed55fa8728fc43833::getLoader()
+#2 /home/bqvietlwksha/public_html/integrateddata/index.php(14): require('/home/bqvietlwk...')
+#3 {main}
+  thrown in /home/bqvietlwksha/public_html/integrateddata/vendor/composer/autoload_real.php on line 41
+[06-May-2025 10:09:27 UTC] PHP Warning:  require(/home/bqvietlwksha/public_html/integrateddata/vendor/composer/../symfony/polyfill-mbstring/bootstrap.php): Failed to open stream: No such file or directory in /home/bqvietlwksha/public_html/integrateddata/vendor/composer/autoload_real.php on line 41
+[06-May-2025 10:09:27 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/bqvietlwksha/public_html/integrateddata/vendor/composer/../symfony/polyfill-mbstring/bootstrap.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bqvietlwksha/public_html/integrateddata/vendor/composer/autoload_real.php:41
+Stack trace:
+#0 /home/bqvietlwksha/public_html/integrateddata/vendor/composer/autoload_real.php(45): {closure}()
+#1 /home/bqvietlwksha/public_html/integrateddata/vendor/autoload.php(25): ComposerAutoloaderInit88970a0117c062eed55fa8728fc43833::getLoader()
+#2 /home/bqvietlwksha/public_html/integrateddata/index.php(14): require('/home/bqvietlwk...')
+#3 {main}
+  thrown in /home/bqvietlwksha/public_html/integrateddata/vendor/composer/autoload_real.php on line 41
+[06-May-2025 10:09:29 UTC] PHP Warning:  require(/home/bqvietlwksha/public_html/integrateddata/vendor/composer/../symfony/polyfill-mbstring/bootstrap.php): Failed to open stream: No such file or directory in /home/bqvietlwksha/public_html/integrateddata/vendor/composer/autoload_real.php on line 41
+[06-May-2025 10:09:29 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/bqvietlwksha/public_html/integrateddata/vendor/composer/../symfony/polyfill-mbstring/bootstrap.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bqvietlwksha/public_html/integrateddata/vendor/composer/autoload_real.php:41
+Stack trace:
+#0 /home/bqvietlwksha/public_html/integrateddata/vendor/composer/autoload_real.php(45): {closure}()
+#1 /home/bqvietlwksha/public_html/integrateddata/vendor/autoload.php(25): ComposerAutoloaderInit88970a0117c062eed55fa8728fc43833::getLoader()
+#2 /home/bqvietlwksha/public_html/integrateddata/index.php(14): require('/home/bqvietlwk...')
+#3 {main}
+  thrown in /home/bqvietlwksha/public_html/integrateddata/vendor/composer/autoload_real.php on line 41
+[06-May-2025 10:11:27 UTC] PHP Warning:  require(/home/bqvietlwksha/public_html/integrateddata/vendor/composer/../symfony/polyfill-mbstring/bootstrap.php): Failed to open stream: No such file or directory in /home/bqvietlwksha/public_html/integrateddata/vendor/composer/autoload_real.php on line 41
+[06-May-2025 10:11:27 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/bqvietlwksha/public_html/integrateddata/vendor/composer/../symfony/polyfill-mbstring/bootstrap.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/bqvietlwksha/public_html/integrateddata/vendor/composer/autoload_real.php:41
+Stack trace:
+#0 /home/bqvietlwksha/public_html/integrateddata/vendor/composer/autoload_real.php(45): {closure}()
+#1 /home/bqvietlwksha/public_html/integrateddata/vendor/autoload.php(25): ComposerAutoloaderInit88970a0117c062eed55fa8728fc43833::getLoader()
+#2 /home/bqvietlwksha/public_html/integrateddata/index.php(14): require('/home/bqvietlwk...')
+#3 {main}
+  thrown in /home/bqvietlwksha/public_html/integrateddata/vendor/composer/autoload_real.php on line 41
+[15-May-2025 08:51:43 UTC] PHP Fatal error:  Class App\Exports\ExelExportOne contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (Maatwebsite\Excel\Concerns\FromQuery::query) in /home/bqvietlwksha/public_html/integrateddata/app/Exports/ExelExportOne.php on line 15
+[15-May-2025 08:53:17 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 1441792 bytes) in /home/bqvietlwksha/public_html/integrateddata/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 409
+[15-May-2025 08:53:44 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 1441792 bytes) in /home/bqvietlwksha/public_html/integrateddata/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 409
+[15-May-2025 09:17:27 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 1441792 bytes) in /home/bqvietlwksha/public_html/integrateddata/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 409
+[15-May-2025 09:18:00 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 4096 bytes) in /home/bqvietlwksha/public_html/integrateddata/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 716
+[15-May-2025 09:22:07 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 1441792 bytes) in /home/bqvietlwksha/public_html/integrateddata/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 409
+[15-May-2025 10:52:43 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/bqvietlwksha/public_html/integrateddata/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 411
+[15-May-2025 11:05:26 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/bqvietlwksha/public_html/integrateddata/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 411
+[15-May-2025 11:40:40 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 20480 bytes) in /home/bqvietlwksha/public_html/integrateddata/vendor/laravel/framework/src/Illuminate/Database/Connection.php on line 411

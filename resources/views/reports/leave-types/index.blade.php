@@ -1,0 +1,163 @@
+@extends('reports.layouts.app')
+@section('style')
+@section('style')
+<style>
+  .switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 24px;
+  }
+
+  .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+  }
+
+  .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+      border-radius: 24px;
+  }
+
+  .slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: 0.4s;
+      border-radius: 50%;
+  }
+
+  input:checked+.slider {
+      background-color: #4caf50;
+  }
+
+  input:checked+.slider:before {
+      transform: translateX(26px);
+  }
+
+  .pointer {
+      cursor: pointer;
+  }
+</style>
+@endsection
+@endsection
+@section('content')
+
+
+<div class="container-fluid">
+  <div class="page-title">
+    <div class="row">
+      <div class="col-12 col-sm-6">
+        <h3>Leave Type Master </h3>
+      </div>
+      <div class="col-12 col-sm-6">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="#"><i data-feather="home"></i></a></li>
+          <li class="breadcrumb-item"> Home</li>
+          <li class="breadcrumb-item active"> Leave Type Master </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Container-fluid starts-->
+<div class="container-fluid">
+<div class="row">
+  <div class="col-sm-12">
+    <div class="card">
+      <div class="card-header pb-0">
+          <div class="mb-3 text-end">
+              <a href="{{route('leave-types.create')}}">
+              <button class="btn btn-square btn-primary" type="button" data-bs-original-title="" title="">Add Leave Type</button>
+              </a>
+          </div>
+      </div>
+      
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="display" id="advance-1">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Leave type</th>
+                <th>Leaves</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              @foreach($entries as $key => $entry)
+              <tr>
+                <td>{{$key+1}}</td>
+                <td>{{$entry->name}}</td>
+                <td>{{$entry->total}} Day{{$entry->total > 1 ? 's' : ''}}</td>
+                <td>
+                  <a href="{{route('leave-types.edit', $entry->id)}}"><button class="btn btn-primary">Edit</button></a>
+                </td>
+              </tr>
+              
+              @endforeach
+            </tbody>
+            
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+@endsection
+@section('script')
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.10.5/dist/sweetalert2.all.min.js"></script>
+<script>
+      const Toast = Swal.mixin({
+      toast: true,
+      position: "top-end",
+      showConfirmButton: false,
+      timer: 3000,
+      timerProgressBar: true,
+      didOpen: (toast) => {
+        toast.onmouseenter = Swal.stopTimer;
+        toast.onmouseleave = Swal.resumeTimer;
+      }
+    });
+    function toggleStatus(e){
+      let status = $(e).prop('checked') == true ? 1 : 0;
+        $.ajax({
+        method: "POST",
+        url: "{{ route('asset-category.index') }}/"+$(e).attr("data-id"),
+        data: {_token: "{{csrf_token()}}", status:status, _method:"PUT"},
+        })
+        .done(function (res) {        
+        if(res.success){
+          Toast.fire({
+            icon: "success",
+            title: "Status changed successfully!"
+          });
+        }else{
+          Toast.fire({
+            icon: "error",
+            title: "Sorry! Faild to update status!"
+          });
+        }
+        })
+        .fail(function (err) {
+        console.log(err);              
+        });
+    }
+</script>
+@endsection
+
