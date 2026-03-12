@@ -65,8 +65,9 @@
     scrollbar-color: black #f1f1f1;
     scrollbar-width: thin;
 }
-.color-highlight{
-  color: #0c3040 !important;
+
+.color-highlight {
+    color: #0c3040 !important;
 }
 </style>
 @endsection
@@ -83,321 +84,273 @@
 </div>
 
 <div class="d-flex flex-column gap-2  mt-5 mb-3">
-    
-    <div class="card m-2" style="border-radius: 20px;box-shadow: 0 0px 8px 0 rgb(0 0 0 / 38%);">
-        <div class="card-body">
-            <div class="profile-container d-flex flex-column gap-2 pt-2 pb-2">
-                <span class="d-flex flex-column">
-                    <table class="table table-bordered">
-                        <tr class="font-aneka">
-                            <th>Salutation</th>
-                            <td id="name">{{$employee->salutation ?? 'N/A'}}</td>
-                        </tr>
-                        <tr class="font-aneka">
-                            <th>Name</th>
-                            <td id="phoneno">{{$employee->emp_name ?? 'N/A'}}</td>
-                        </tr>
-                        <tr class="font-aneka">
-                            <th>Gender</th>
-                            <td id="DOB">{{$employee->gender ?? 'N/A'}}</td>
-                        </tr>
-                        <tr class="font-aneka">
-                            <th>DOB</th>
-                            <td id="gender">{{$employee->dob ? date('d-m-Y', strtotime($employee->dob)) : 'N/A'}}</td>
-                        </tr>
-                        <tr class="font-aneka">
-                            <th>Phone Number</th>
-                            <td id="drivinglicencevalidity">{{$employee->phone ?? 'N/A'}}</td>
-                        </tr>
-                        <tr class="font-aneka">
-                            <th>Permanent Address</th>
-                            <td id="address">{{$employee->address ?? 'N/A'}}</td>
-                        </tr>
-                        <tr class="font-aneka">
-                            <th>Office Address</th>
-                            <td id="drivinglicenceno">{{$employee->temp_address ?? 'N/A'}}</td>
-                        </tr>
 
-                    </table>
-                </span>
-                <span>
-                    <span class="font-aneka text-dark ms-1"><b>Caste</b></span>
-                    <div class="table-responsive">
-                        <table class="bordered-table" style="border: 1px solid #00000042;">
-                            <thead>
-                                <tr>
-                                    <th class="font-aneka">Category</th>
-                                    <th class="font-aneka">Caste</th>
-                                    <th class="font-aneka">Sub-Caste</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="font-aneka">{{$employee->category ?? 'N/A'}}</td>
-                                    <td class="font-aneka">{{$employee->sub_category ?? 'N/A'}}</td>
-                                    <td class="font-aneka">{{$employee->sub_caste ?? 'N/A'}}</td>
+    <div class="container mt-3 mb-3 d-flex flex-column gap-3">
 
-                                </tr>
+        <!-- PERSONAL DETAILS -->
+        <div class="card shadow-sm mb-2" style="border-radius:16px; overflow:hidden;">
 
-                            </tbody>
-                        </table>
-                    </div>
-                </span>
-                <span>
-                    <table class="table table-bordered">
-                        <tr class="font-aneka">
-                            <th>Date of Joining</th>
-                            <td id="name">{{$employee->doj ? date('d-m-Y', strtotime($employee->doj)) : 'N/A'}}</td>
-                        </tr>
-                        <tr class="font-aneka">
-                            <th>KGID / Metal Number</th>
-                            <td id="phoneno">{{$employee->kgid ?? 'N/A'}}</td>
-                        </tr>
-                        <tr class="font-aneka">
-                            <th>Mode of Recuritment</th>
-                            <td id="DOB">
-                                <table class="table table-bordered">
-                                    <tr class="font-aneka">
-                                        @if(!empty($employee->DR_PR))
-                                        <th>{{ $employee->DR_PR }}</th>
-                                        @endif
+            <div class="card-header fw-bold d-flex align-items-center gap-2" style="background:#0c3040;color:white;">
+                <i class="bi bi-person"></i> Personal Details
+            </div>
 
-                                        @if(!empty($employee->KPSC))
-                                        <td id="name">{{ $employee->KPSC }}</td>
-                                        @endif
-                                    </tr>
+            <div class="card-body p-0">
 
-                                </table>
-                            </td>
-                        </tr>
-                        <tr class="font-aneka">
-                            <th>HK / RPC</th>
-                            <td id="gender">{{$employee->HK != '' ? $employee->HK : 'N/A'}}</td>
-                        </tr>
-                    </table>
-                </span>
-                <span class="mb-2">
-                    <span class="font-aneka text-dark ms-1"><b>Posting Details</b></span>
-                    <div class="table-responsive">
-                        <table class="bordered-table scroll-table" style="border: 1px solid #00000042;">
-                            <thead>
-                                <tr>
-                                    <th class="font-aneka">Post Held</th>
-                                    <th class="font-aneka">Group</th>
-                                    <th class="font-aneka">Designation</th>
-                                    <th class="font-aneka">Organization Name</th>
-                                    <th class="font-aneka">Place of Working Dirstict</th>
-                                    <th class="font-aneka">Place of Working Taluk</th>
-                                    <!-- <th class="font-aneka">Posting</th> -->
-                                    <th class="font-aneka">From Date</th>
-                                    <th class="font-aneka">To Date</th>
-                                    <th class="font-aneka">Pay Scale</th>
-                                    <!-- <th class="font-aneka">Increment Date</th> -->
-                                    <!-- <th class="font-aneka">Type</th> -->
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="font-aneka">{{$employee->post_held ?? 'N/A'}}</td>
-                                    <td class="font-aneka">{{$employee->post_group ?? 'N/A'}}</td>
-                                    <td class="font-aneka">{{$employee->post_designation ?? 'N/A'}}</td>
-                                    <td class="font-aneka">{{$employee->post_organization ?? 'N/A'}}</td>
-                                    <td class="font-aneka">{{$employee->post_district ?? 'N/A'}}</td>
-                                    <td class="font-aneka">{{$employee->post_taluk ?? 'N/A'}}</td>
-                                    <!-- <td class="font-aneka">{{--$posting->posting ?? 'N/A'--}}</td> -->
-                                    <td class="font-aneka">
-                                        {{$employee->post_from ? date('d-m-Y', strtotime($employee->post_from)) : 'N/A'}}</td>
-                                    <td class="font-aneka">
-                                        {{$employee->post_to ? date('d-m-Y', strtotime($employee->post_to)) : 'N/A'}}</td>
-                                    <td class="font-aneka">{{$employee->post_pay_scale ?? 'N/A'}}</td>
-                                    <!-- <td class="font-aneka">{{--$posting->increment_date ?? 'N/A'--}}</td> -->
-                                    <!-- <td class="font-aneka">{{--$posting->type ?? 'N/A'--}}</td> -->
+                <div class="d-flex justify-content-between border-bottom p-3">
+                    <span class="text-muted ">Salutation</span>
+                    <span class="fw-semibold">{{$employee->salutation ?? 'N/A'}}</span>
+                </div>
 
-                                </tr>
+                <div class="d-flex justify-content-between border-bottom p-3">
+                    <span class="text-muted">Name</span>
+                    <span class="fw-semibold">{{$employee->emp_name ?? 'N/A'}}</span>
+                </div>
 
-                            </tbody>
-                        </table>
-                    </div>
-                </span>
-                <span class="mb-2">
-                     <span class="font-aneka text-dark ms-1"><b>Spouse Details</b></span><br>
-                    <span class="font-aneka text-dark ms-1 d-flex flex-row gap-1"><span><b>Are you married  
-                                :</b></span><span>{{$employee->is_married ?? 'N/A'}}</span></span>
-                    @if($employee->is_married == 'Yes')
-                    <table class="table table-bordered">
-                        <tr class="font-aneka">
-                            <th>Name</th>
-                            <td id="Spousename">{{$employee->spouse_name ?? 'N/A'}}</td>
-                        </tr>
-                        <tr class="font-aneka">
-                            <th>Gender</th>
-                            <td id="SpouseGender">{{$employee->spouse_gender ?? 'N/A'}}</td>
-                        </tr>
-                        <tr class="font-aneka">
-                            <th>Phone Number</th>
-                            <td id="SpousePhoneno">{{$employee->spouse_phone ?? 'N/A'}}</td>
-                        </tr>
-                        <tr class="font-aneka">
-                            <th>Are they working </th>
-                            <td id="SpouseAreyouWorking">{{$employee->is_spouse_working ?? 'N/A'}}</td>
-                        </tr>
-                        @if($employee->is_spouse_working == 'Yes')
-                        <tr class="font-aneka">
-                            <th>Working in</th>
-                            <td id="SpouseWorkingIn">{{$employee->spouse_working_in ?? 'N/A'}}</td>
-                        </tr>
-                        @if($employee->spouse_working_in == 'Govt')
-                        <tr class="font-aneka">
-                            <th>KGID Number</th>
-                            <td id="SpouseKGIDNo">{{$employee->spouse_kgid ?? 'N/A'}}</td>
-                        </tr>
-                        @endif
-                        <tr class="font-aneka">
-                            <th>Place of Working</th>
-                            <td id="SpousePlaceWorking">{{$employee->spouse_working_place ?? 'N/A'}}</td>
-                        </tr>
-                        @endif
-                    </table>
-                    @endif
-                </span>
-                <span class="mb-2">
-                    <span class="font-aneka text-dark ms-1"><b>Nominee Details</b></span>
-                    <div class="table-responsive">
-                        <table class="table table-bordered">
-                            <tr class="font-aneka">
-                                <th>Name</th>
-                                <td id="name">{{$employee->nominee_name ?? 'N/A'}}</td>
-                            </tr>
-                            <tr class="font-aneka">
-                                <th>Gender</th>
-                                <td id="phoneno">{{$employee->nominee_gender ?? 'N/A'}}</td>
-                            </tr>
-                            <tr class="font-aneka">
-                                <th>DOB</th>
-                                <td id="DOB">{{$employee->nominee_dob ? date('d-m-Y', strtotime($employee->nominee_dob)) : 'N/A'}}</td>
-                            </tr>
-                            <tr class="font-aneka">
-                                <th>Relationship</th>
-                                <td id="gender">{{$employee->nominee_relation ?? 'N/A'}}</td>
-                            </tr>
+                <div class="d-flex justify-content-between border-bottom p-3">
+                    <span class="text-muted">Gender</span>
+                    <span class="fw-semibold">{{$employee->gender ?? 'N/A'}}</span>
+                </div>
 
-                        </table>
-                        <!-- <table class="bordered-table" style="border: 1px solid #00000042;">
-                            <thead>
-                                <tr>
-                                    <th class="font-aneka">Name</th>
-                                    <th class="font-aneka">Gender</th>
-                                    <th class="font-aneka">DOB</th>
-                                    <th class="font-aneka">Relationship</th>
+                <div class="d-flex justify-content-between border-bottom p-3">
+                    <span class="text-muted">DOB</span>
+                    <span class="fw-semibold">
+                        {{$employee->dob ? date('d-m-Y', strtotime($employee->dob)) : 'N/A'}}
+                    </span>
+                </div>
 
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach($employee->nominees as $nominee)
-                                <tr>
-                                    <td class="font-aneka">{{$nominee->name ?? 'N/A'}}</td>
-                                    <td class="font-aneka">{{$nominee->gender ?? 'N/A'}}</td>
-                                    <td class="font-aneka">
-                                        {{$nominee->dob ? date('d-m-Y', strtotime($nominee->dob)) : 'N/A' }}</td>
-                                    <td class="font-aneka">{{$nominee->relation ?? 'N/A'}}</td>
-
-
-                                </tr>
-                                @endforeach
-
-                            </tbody>
-                        </table> -->
-                    </div>
-                </span>
-                <span class="mb-2">
-                    <span class="font-aneka text-dark ms-1"><b>Childern Details</b></span>
-                    <div class="table-responsive">
-                        <table class="bordered-table" style="border: 1px solid #00000042;">
-                            <thead>
-                                <tr>
-                                    <th class="font-aneka">Name</th>
-                                    <th class="font-aneka">Gender</th>
-                                    <th class="font-aneka">DOB</th>
-
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach($employee->children as $child)
-                                <tr>
-                                    <td class="font-aneka">{{$child->name ?? 'N/A'}}</td>
-                                    <td class="font-aneka">{{$child->gender ?? 'N/A'}}</td>
-                                    <td class="font-aneka">
-                                        {{$child->dob ? date('d-m-Y', strtotime($child->dob)) : 'N/A'}}</td>
-
-
-                                </tr>
-                                @endforeach
-
-                            </tbody>
-                        </table>
-                    </div>
-                </span>
-                <span>
-                    <span class="font-aneka text-dark ms-1"><b>KGID Policy Details</b></span>
-                    <div class="table-responsive">
-                        <table class="bordered-table" style="border: 1px solid #00000042;">
-                            <thead>
-                                <tr>
-                                    <th class="font-aneka">Policy No</th>
-                                    <th class="font-aneka">Policy Start Date</th>
-                                    <th class="font-aneka">Premium</th>
-
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach($employee->policies as $policy)
-                                <tr>
-                                    <td class="font-aneka">{{$policy->number ?? 'N/A'}}</td>
-                                    <td class="font-aneka">
-                                        {{$policy->start_date ? date('d-m-Y', strtotime($policy->start_date)) : 'N/A' }}
-                                    </td>
-                                    <td class="font-aneka">{{$policy->premium ?? 'N/A'}}</td>
-
-
-                                </tr>
-                                @endforeach
-
-                            </tbody>
-                        </table>
-                    </div>
-                </span>
+                <div class="d-flex justify-content-between p-3">
+                    <span class="text-muted">Phone</span>
+                    <span class="fw-semibold">{{$employee->phone ?? 'N/A'}}</span>
+                </div>
 
             </div>
         </div>
+
+
+        <!-- ADDRESS -->
+        <div class="card shadow-sm mb-2" style="border-radius:16px; overflow:hidden;">
+
+            <div class="card-header fw-bold d-flex align-items-center gap-2" style="background:#0c3040;color:white;">
+                <i class="bi bi-geo-alt"></i> Address
+            </div>
+
+            <div class="card-body p-0">
+
+                <div class="d-flex justify-content-between border-bottom p-3">
+                    <span class="text-muted">Permanent Address</span>
+                    <span class="fw-semibold">{{$employee->address ?? 'N/A'}}</span>
+                </div>
+
+                <div class="d-flex justify-content-between p-3">
+                    <span class="text-muted">Office Address</span>
+                    <span class="fw-semibold">{{$employee->temp_address ?? 'N/A'}}</span>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- CASTE -->
+        <div class="card shadow-sm mb-2" style="border-radius:16px; overflow:hidden;">
+
+            <div class="card-header fw-bold d-flex align-items-center gap-2" style="background:#0c3040;color:white;">
+                <i class="bi bi-people"></i> Caste Details
+            </div>
+
+            <div class="card-body p-0">
+
+                <div class="d-flex justify-content-between border-bottom p-3">
+                    <span class="text-muted">Category</span>
+                    <span class="fw-semibold">{{$employee->category ?? 'N/A'}}</span>
+                </div>
+
+                <div class="d-flex justify-content-between border-bottom p-3">
+                    <span class="text-muted">Caste</span>
+                    <span class="fw-semibold">{{$employee->sub_category ?? 'N/A'}}</span>
+                </div>
+
+                <div class="d-flex justify-content-between p-3">
+                    <span class="text-muted">Sub Caste</span>
+                    <span class="fw-semibold">{{$employee->sub_caste ?? 'N/A'}}</span>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- SERVICE DETAILS -->
+        <div class="card shadow-sm mb-2" style="border-radius:16px; overflow:hidden;">
+
+            <div class="card-header fw-bold d-flex align-items-center gap-2" style="background:#0c3040;color:white;">
+                <i class="bi bi-briefcase"></i> Service Details
+            </div>
+
+            <div class="card-body p-0">
+
+                <div class="d-flex justify-content-between border-bottom p-3">
+                    <span class="text-muted">Date of Joining</span>
+                    <span class="fw-semibold">
+                        {{$employee->doj ? date('d-m-Y', strtotime($employee->doj)) : 'N/A'}}
+                    </span>
+                </div>
+
+                <div class="d-flex justify-content-between border-bottom p-3">
+                    <span class="text-muted">KGID</span>
+                    <span class="fw-semibold">{{$employee->kgid ?? 'N/A'}}</span>
+                </div>
+
+                <div class="d-flex justify-content-between p-3">
+                    <span class="text-muted">HK / RPC</span>
+                    <span class="fw-semibold">{{$employee->HK ?? 'N/A'}}</span>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- POSTING DETAILS -->
+        <div class="card shadow-sm mb-2" style="border-radius:16px; overflow:hidden;">
+
+            <div class="card-header fw-bold d-flex align-items-center gap-2" style="background:#0c3040;color:white;">
+                <i class="bi bi-building"></i> Posting Details
+            </div>
+
+            <div class="card-body p-0">
+
+                <div class="d-flex justify-content-between border-bottom p-3">
+                    <span class="text-muted">Post Held</span>
+                    <span class="fw-semibold">{{$employee->post_held ?? 'N/A'}}</span>
+                </div>
+
+                <div class="d-flex justify-content-between border-bottom p-3">
+                    <span class="text-muted">Designation</span>
+                    <span class="fw-semibold">{{$employee->post_designation ?? 'N/A'}}</span>
+                </div>
+
+                <div class="d-flex justify-content-between border-bottom p-3">
+                    <span class="text-muted">Organization</span>
+                    <span class="fw-semibold">{{$employee->post_organization ?? 'N/A'}}</span>
+                </div>
+
+                <div class="d-flex justify-content-between border-bottom p-3">
+                    <span class="text-muted">District</span>
+                    <span class="fw-semibold">{{$employee->post_district ?? 'N/A'}}</span>
+                </div>
+
+                <div class="d-flex justify-content-between border-bottom p-3">
+                    <span class="text-muted">Taluk</span>
+                    <span class="fw-semibold">{{$employee->post_taluk ?? 'N/A'}}</span>
+                </div>
+
+                <div class="d-flex justify-content-between p-3">
+                    <span class="text-muted">Pay Scale</span>
+                    <span class="fw-semibold">{{$employee->post_pay_scale ?? 'N/A'}}</span>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- SPOUSE DETAILS -->
+        <div class="card shadow-sm mb-2" style="border-radius:16px; overflow:hidden;">
+
+            <div class="card-header fw-bold d-flex align-items-center gap-2" style="background:#0c3040;color:white;">
+                <i class="bi bi-heart"></i> Spouse Details
+            </div>
+
+            <div class="card-body p-0">
+
+                <div class="d-flex justify-content-between border-bottom p-3">
+                    <span class="text-muted">Married</span>
+                    <span class="fw-semibold">{{$employee->is_married ?? 'N/A'}}</span>
+                </div>
+
+                @if($employee->is_married == 'Yes')
+
+                <div class="d-flex justify-content-between border-bottom p-3">
+                    <span class="text-muted">Name</span>
+                    <span class="fw-semibold">{{$employee->spouse_name}}</span>
+                </div>
+
+                <div class="d-flex justify-content-between p-3">
+                    <span class="text-muted">Phone</span>
+                    <span class="fw-semibold">{{$employee->spouse_phone}}</span>
+                </div>
+
+                @endif
+
+            </div>
+        </div>
+
+
+        <!-- NOMINEE -->
+        <div class="card shadow-sm mb-2" style="border-radius:16px; overflow:hidden;">
+
+            <div class="card-header fw-bold d-flex align-items-center gap-2" style="background:#0c3040;color:white;">
+                <i class="bi bi-person-check"></i> Nominee Details
+            </div>
+
+            <div class="card-body p-0">
+
+                <div class="d-flex justify-content-between border-bottom p-3">
+                    <span class="text-muted">Name</span>
+                    <span class="fw-semibold">{{$employee->nominee_name ?? 'N/A'}}</span>
+                </div>
+
+                <div class="d-flex justify-content-between border-bottom p-3">
+                    <span class="text-muted">Gender</span>
+                    <span class="fw-semibold">{{$employee->nominee_gender ?? 'N/A'}}</span>
+                </div>
+
+                <div class="d-flex justify-content-between p-3">
+                    <span class="text-muted">Relationship</span>
+                    <span class="fw-semibold">{{$employee->nominee_relation ?? 'N/A'}}</span>
+                </div>
+
+            </div>
+        </div>
+
+
     </div>
     @if($employee->is_verified == 0)
     <div class="card m-2" style="border-radius: 20px;box-shadow: 0 0px 8px 0 rgb(0 0 0 / 38%);">
         <div class="card-body">
-          <form method="POST" action="{{ route('pwa.verify.profile') }}">
-          @csrf
-            <div class="form-check icon-check">
-              <input class="form-check-input" type="checkbox" name="mark" value="1" required id="form3acsd">
-              <label class="form-check-label font-12 ms-n1" for="form3acsd">I have reviewed my profile details and confirm that the information provided is accurate.</label>
-              <i style="margin-top:-1px;" class="icon-check-1 fa fa-circle color-gray-dark font-14"></i>
-              <i style="margin-top:-1px;" class="icon-check-2 fa fa-check-circle font-14 color-highlight"></i>
-            </div>
-            <span class="text-danger" id="verror" style="padding-left: 27px;display:none;">Please Mark Checkbox</span>
-            <div class="d-flex flex-column align-items-center">
-              <button type="submit" onclick="checMark()" class="btn rounded btn-primary font-aneka d-flex flex-row gap-2">
-                <span><i class="bi bi-check-square"></i></span><span>Verified</span>
-              </button>
-            </div>
-        </form>
+            <form method="POST" action="{{ route('pwa.verify.profile') }}">
+                @csrf
+                <div class="form-check icon-check">
+                    <input class="form-check-input" type="checkbox" name="mark" value="1" required id="form3acsd">
+                    <label class="form-check-label font-12 ms-n1" for="form3acsd">I have reviewed my profile details and
+                        confirm that the information provided is accurate.</label>
+                    <i style="margin-top:-1px;" class="icon-check-1 fa fa-circle color-gray-dark font-14"></i>
+                    <i style="margin-top:-1px;" class="icon-check-2 fa fa-check-circle font-14 color-highlight"></i>
+                </div>
+                <span class="text-danger" id="verror" style="padding-left: 27px;display:none;">Please Mark
+                    Checkbox</span>
+                <div class="d-flex flex-column align-items-center">
+                    <button type="submit" onclick="checMark()"
+                        class="btn rounded btn-primary font-aneka d-flex flex-row gap-2">
+                        <span><i class="bi bi-check-square"></i></span><span>Verified</span>
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
     @endif
-    <div class="d-flex flex-column align-items-center">
-        <form method="POST" action="">
-            <a href="{{ route('pwa.newProfileForm') }}" class="btn btn-primary font-aneka d-flex flex-row gap-2"
-                style="border-radius: 10px;">
-                <span><i class="bi bi-pencil-square"></i></span><span>Edit</span>
-            </a>
-        </form>
+    <div style="
+position:fixed;
+bottom:80px;
+right:20px;
+z-index:9999;
+">
+
+        <a href="{{ route('pwa.profile.edit') }}" class="btn btn-primary d-flex align-items-center gap-2"
+            style="border-radius:30px;padding:10px 18px;box-shadow:0 4px 12px rgba(0,0,0,0.25);">
+
+            <i class="bi bi-pencil"></i>
+            Edit
+
+        </a>
+
     </div>
 </div>
 
@@ -409,25 +362,25 @@
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
-  @if(session('success'))
-  Swal.fire({
-        icon: 'success',
-        title: 'Submitted!',
-        text: "{{ session('success') }}",
-        confirmButtonColor: '#3085d6'
-      });
-  @endif
+@if(session('success'))
+Swal.fire({
+    icon: 'success',
+    title: 'Submitted!',
+    text: "{{ session('success') }}",
+    confirmButtonColor: '#3085d6'
+});
+@endif
 </script>
 
 
 <script>
-  function checMark(){
+function checMark() {
     if ($('#form3acsd').is(':checked')) {
-      $('#verror').hide();
+        $('#verror').hide();
     } else {
-      $('#verror').show();
+        $('#verror').show();
     }
-  }
+}
 // Hide success message after 30 seconds (30000 ms)
 setTimeout(function() {
     let success = document.getElementById('success-alert');

@@ -38,19 +38,22 @@
 
 
  <div class="d-flex flex-column gap-2 mt-4">
-    <div class="d-flex flex-column align-items-center  mt-3">
-        <a class="btn btn-primary" style="border-radius:20px" href="{{ route('asset-inventory.create') }}">Asset Form</a>
-    </div>
-    
+     <div class="d-flex flex-column align-items-center  mt-3">
+         <a class="btn btn-primary" style="border-radius:20px" href="{{ route('asset-inventory.create') }}">Asset
+             Form</a>
+     </div>
+
      <span class="font-aneka text-center mt-2 text-dark" style="font-size: 18px;font-weight:700">Category</span>
      <div class="row g-3 mx-2 flex-wrap">
-        @foreach($categories as $category)
+         @foreach($categories as $category)
          <div class="col-6 col-md-4 col-lg-3">
              <a href="{{route('pwa.subcategory', $category->id)}}" class="card h-100 br-25 text-center mb-0">
                  <div class="card-body d-flex flex-column align-items-center gap-2 justify-content-center">
-                     <img src="{{ asset($category->icon) }}" class="img-fluid"
-                         style="max-width: 60%;">
+                     <img src="{{ asset($category->icon) }}" class="img-fluid" style="max-width: 60%;">
                      <span class="font-aneka category-font">{{$category->name}}</span>
+                     <span class="font-aneka badge rounded-pill" style="font-size:14px; background:#0c3040; color:white;">
+                         Count: 9
+                     </span>
                  </div>
              </a>
          </div>

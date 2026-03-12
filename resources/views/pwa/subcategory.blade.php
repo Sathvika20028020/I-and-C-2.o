@@ -54,6 +54,9 @@
                      <img src="{{ asset($category->icon) }}" class="img-fluid"
                          style="max-width: 60%;">
                      <span class="font-aneka category-font">{{$category->name}}</span>
+                     <span class="font-aneka badge rounded-pill" style="font-size:14px; background:#0c3040; color:white;">
+                         Count: 3
+                     </span>
                  </div>
              </a>
          </div>

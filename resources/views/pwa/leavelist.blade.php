@@ -109,6 +109,7 @@ table.dataTable {
     background-color: #183b4a;
     border-color: #183b4a;
 }
+
 .page-link {
     color: #183b4a;
 }
@@ -149,19 +150,18 @@ table.dataTable {
                                     <h4>{{$type->name}}</h4>
 
 
-                                    <div class="row mt-2 g-2">
+                                    <div class="row mt-2 text-center">
+
                                         <div class="col-6">
-                                            <div class="card p-2 text-center mb-0 shadow-sm hover-shadow">
-                                                <small class="text-muted">Taken</small>
-                                                <h6 class="fw-bold">{{$type->taken}}</h6>
-                                            </div>
+                                            <small class="text-muted">Taken</small><br>
+                                            <span class="badge bg-danger px-3">{{$type->taken}}</span>
                                         </div>
+
                                         <div class="col-6">
-                                            <div class="card p-2 text-center mb-0 shadow-sm hover-shadow">
-                                                <small class="text-muted">Remaining</small>
-                                                <h6 class="fw-bold">{{$type->total - $type->taken}}</h6>
-                                            </div>
+                                            <small class="text-muted">Remaining</small><br>
+                                            <span class="badge bg-success px-3">{{$type->total - $type->taken}}</span>
                                         </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -171,140 +171,44 @@ table.dataTable {
                 </div>
             </div>
 
-            <div class="card shadow">
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table id="example" class="table table-bordered" style="width:100%">
-                            <thead class="table-light">
-                               <tr>
-                                    <th style="width: 10%;white-space: nowrap;">Sl. No</th>
-                                    <th style="width: 20%;white-space: nowrap;">Leave Date</th>
-                                    <th style="width: 20%;white-space: nowrap;">Duration</th>
-                                    <th style="width: 20%;white-space: nowrap;">Leave Type</th>
-                                    <th style="width: 20%;white-space: nowrap;">Leave Status</th>
-                                    <th style="width: 20%;white-space: nowrap;">Paid</th>
-                                    <th style="width: 20%;white-space: nowrap;">Action</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach($entries as $entry)
-                                <tr>
-                                    <td class="font-aneka">{{$loop->iteration}}</td>
-                                    <td class="font-aneka">{{ $entry->dates?->first()?->date ? date('d-M-Y', strtotime($entry->dates->first()->date)) : '' }}
-                                    </td>
-                                    <td class="font-aneka">{{$entry->duration}}</td>
-                                    <td class="font-aneka">{{$entry->leave_type->name}}</td>
-                                    <td>
-                                        @if($entry->duration == 'Multiple Days')
-                                        <a href="{{ route('pwa.leaves.show', $entry->id) }}">
-                                            View Status
-                                        </a>
-                                        @else
-                                        <span
-                                            class="badge text-white bg-{{$entry->dates?->first()?->status == 'Pending' ? 'warning' : ( $entry->dates?->first()?->status == 'Rejected' ? 'danger' : 'success')}} text-dark">{{$entry->dates?->first()?->status}}</span>
-                                        @endif
-                                    </td>
-                                    <td>@if($entry->duration == 'Multiple Days')
-                                        <a href="{{ route('pwa.leaves.show', $entry->id) }}">
-                                            View All
-                                        </a>
-                                        @else
-                                        {{$entry->dates->first()->paid == 1 ? 'Yes' : 'No'}}
-                                        @endif
-                                    </td>
-                                    <td>
-                                        <a href="{{ route('pwa.leaves.show', $entry->id) }}"
-                                            class="btn btn-sm btn-info text-white">
-                                            <i class="bi bi-eye"></i>
-                                        </a>
+            <div class="card shadow-sm mb-2" style="border-radius:16px; overflow:hidden;">
+                <div class="card-header fw-bold d-flex align-items-center gap-2"
+                    style="background:#0c3040;color:white;">
+                    <i class="bi bi-calendar-check"></i> Leave Entries
+                </div>
 
-                                        @if(count($entry->dates) == count($entry->dates->where('status', 'Pending')))
-                                        <a href="{{ route('pwa.leaves.edit', $entry->id) }}"
-                                            class="btn btn-sm btn-info text-white">
-                                            <i class="bi bi-pencil"></i>
-                                        </a>
-                                        @endif
-                                    </td>
-                                </tr>
-                                @endforeach
-                                {{--
-                                <tr>
-                                    <td class="font-aneka">2</td>
-                                    <td class="font-aneka">15-Jan-2026</td>
-                                    <td class="font-aneka">2 Days</td>
-                                    <td class="font-aneka">Sick Leave</td>
-                                    <td><span class="badge badge-pending font-aneka">Pending</span></td>
-                                    <td>Yes</td>
-                                    <td>
-                                        <button class="btn btn-sm btn-info text-white">
-                                            <i class="bi bi-eye"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td class="font-aneka">3</td>
-                                    <td class="font-aneka">22-Jan-2026</td>
-                                    <td class="font-aneka">1 Day</td>
-                                    <td class="font-aneka">Loss of Pay</td>
-                                    <td><span class="badge badge-rejected font-aneka">Rejected</span></td>
-                                    <td>No</td>
-                                    <td>
-                                        <button class="btn btn-sm btn-info text-white">
-                                            <i class="bi bi-eye"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td class="font-aneka">4</td>
-                                    <td class="font-aneka">05-Feb-2026</td>
-                                    <td class="font-aneka">3 Days</td>
-                                    <td class="font-aneka">Casual Leave</td>
-                                    <td><span class="badge badge-approved font-aneka">Approved</span></td>
-                                    <td>Yes</td>
-                                    <td>
-                                        <button class="btn btn-sm btn-info text-white">
-                                            <i class="bi bi-eye"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td class="font-aneka">5</td>
-                                    <td class="font-aneka">12-Feb-2026</td>
-                                    <td class="font-aneka">1 Day</td>
-                                    <td class="font-aneka">Sick Leave</td>
-                                    <td><span class="badge badge-pending font-aneka">Pending</span></td>
-                                    <td class="font-aneka">Yes</td>
-                                    <td>
-                                        <button class="btn btn-sm btn-info text-white">
-                                            <i class="bi bi-eye"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td class="font-aneka">6</td>
-                                    <td class="font-aneka">20-Feb-2026</td>
-                                    <td class="font-aneka">2 Days</td>
-                                    <td class="font-aneka">Loss of Pay</td>
-                                    <td><span class="badge badge-approved font-aneka">Approved</span></td>
-                                    <td class="font-aneka">No</td>
-                                    <td>
-                                        <button class="btn btn-sm btn-info text-white">
-                                            <i class="bi bi-eye"></i>
-                                        </button>
-                                    </td>
-                                </tr>
-                                --}}
-                            </tbody>
-                        </table>
+                <div class="card-body p-0">
+                    <!-- Leave Entry Example -->
+                    <div class="border-bottom p-3">
+                        <div class="d-flex justify-content-between">
+                            <span class="text-muted">Leave Date</span>
+                            <span class="fw-semibold">01-Mar-2026</span>
+                        </div>
+                        <div class="d-flex justify-content-between mt-2">
+                            <span class="text-muted">Duration</span>
+                            <span class="fw-semibold">Single Day</span>
+                        </div>
+                        <div class="d-flex justify-content-between mt-2">
+                            <span class="text-muted">Leave Type</span>
+                            <span class="fw-semibold">Sick Leave</span>
+                        </div>
+                        <div class="d-flex justify-content-between mt-2">
+                            <span class="text-muted">Leave Status</span>
+                            <span class="badge bg-success fw-semibold">Approved</span>
+                        </div>
+                        <div class="d-flex justify-content-between mt-2">
+                            <span class="text-muted">Paid</span>
+                            <span class="fw-semibold">Yes</span>
+                        </div>
+                        <div class="d-flex gap-2 mt-3 justify-content-end">
+                            <a href="#" class="btn btn-sm btn-primary">View</a>
+                            <a href="#" class="btn btn-sm btn-secondary">Edit</a>
+                        </div>
                     </div>
-
+                    <!-- Repeat the above block for more leave entries -->
                 </div>
             </div>
-           
+
         </div>
     </div>
 </div>

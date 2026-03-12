@@ -19,7 +19,7 @@
     border: 1px solid #183b4a87 !important;
     box-shadow: 0 0px 8px 0 #183b4a54;
 }
-       
+
 .swal-button {
     display: block !important;
     margin: 0 auto !important;
@@ -36,7 +36,6 @@
     line-height: 1.4 !important;
     text-align: center !important;
 }
-
  </style>
  @endsection
  @section('content')
@@ -56,22 +55,62 @@
 
 
  <div class="d-flex flex-column gap-2 mt-4">
-     <div class="flex-row d-flex m-0 gap-1  justify-content-around  text-center mb-0 mt-3"
-         style="margin: 15px 10px 0px 10px !important;">
-         <a href="{{url('/pwa/profile')}}" class="card w-100 mb-2 "
-             style="border-radius: 30px;    border: 1px solid #183b4a87 !important;box-shadow: 0 0px 8px 0 #183b4a54;">
-             <div class="card-body" style="padding:7px !important">
-                 <span class="font-aneka fontsize">Profile</span>
-             </div>
-         </a>
-        @if(auth()->user()->employee?->asset_access == 1)
-         <a href="{{ route('pwa.category') }}" class="card w-100 mb-2 "
-             style="border-radius: 30px;    border: 1px solid #183b4a87 !important;box-shadow: 0 0px 8px 0 #183b4a54;">
-             <div class="card-body" style="padding:7px !important">
-                 <span class="font-aneka fontsize">Assets</span>
-             </div>
-         </a>
+     <div class="row m-0 mt-3 text-center" style="margin: 15px 10px 0px 10px !important;">
+         <!-- Welcome Section -->
+         <div class="text-center mb-2" style="margin-top:5px;">
+             <h4 class="font-aneka" style="font-weight:900;color:#183b4a;">
+                 Hello User 👋
+             </h4>
+             <p class="font-aneka fontsize1" style="color:#555;margin-bottom:5px;">
+                 Welcome to the dashboard. Access your profile, assets, applications, and track status easily.
+             </p>
+         </div>
+         <!-- Profile -->
+         <div class="col-6 ">
+             <a href="{{url('/pwa/profile')}}" class="card p-2"
+                 style="border-radius:10px;border:1px solid #183b4a87 !important;box-shadow:0 0px 8px 0 #183b4a54;">
+
+                 <i class="bi bi-person-circle" style="font-size:28px;color:#183b4a;"></i>
+                 <span class="font-aneka fontsize d-block mt-1">Profile</span>
+
+             </a>
+         </div>
+
+         <!-- Assets -->
+         @if(auth()->user()->employee?->asset_access == 1)
+         <div class="col-6 ">
+             <a href="{{ route('pwa.category') }}" class="card p-2"
+                 style="border-radius:10px;border:1px solid #183b4a87 !important;box-shadow:0 0px 8px 0 #183b4a54;">
+
+                 <i class="bi bi-box-seam" style="font-size:28px;color:#183b4a;"></i>
+                 <span class="font-aneka fontsize d-block mt-1">Assets</span>
+
+             </a>
+         </div>
          @endif
+
+         <!-- Apply -->
+         <div class="col-6 ">
+             <a href="" class="card p-2"
+                 style="border-radius:10px;border:1px solid #183b4a87 !important;box-shadow:0 0px 8px 0 #183b4a54;">
+
+                 <i class="bi bi-pencil-square" style="font-size:28px;color:#183b4a;"></i>
+                 <span class="font-aneka fontsize d-block mt-1">Apply</span>
+
+             </a>
+         </div>
+
+         <!-- Status -->
+         <div class="col-6">
+             <a href="" class="card p-2"
+                 style="border-radius:10px;border:1px solid #183b4a87 !important;box-shadow:0 0px 8px 0 #183b4a54;">
+
+                 <i class="bi bi-clipboard-check" style="font-size:28px;color:#183b4a;"></i>
+                 <span class="font-aneka fontsize d-block mt-1">Status</span>
+
+             </a>
+         </div>
+
      </div>
 
      <div class="card mb-3 mt-1"
@@ -100,15 +139,15 @@
  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      @if($profile_updated == 'yes')
-        swal({
-            title: "Approved!",
-            text: "Your profile request has been approved by the administrator.",
-            icon: "success",
-            button: "OK",
-        });
-      @endif
+document.addEventListener("DOMContentLoaded", function() {
+    @if($profile_updated == 'yes')
+    swal({
+        title: "Approved!",
+        text: "Your profile request has been approved by the administrator.",
+        icon: "success",
+        button: "OK",
     });
-</script>
+    @endif
+});
+ </script>
  @endsection
