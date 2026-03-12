@@ -19,10 +19,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Anek+Latin:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    
     @yield('style')
     <style>
     .font-aneka {
-        font-family: 'Anek Latin', sans-serif;
+        font-family: 'Anek Latin', sans-serif !important;
     }
 
     .footer-card {
@@ -30,7 +31,7 @@
     }
 
     .fontsize {
-        font-size: 18px;
+        font-size: 14px;
         font-weight: 600;
         color: black;
 
@@ -39,6 +40,11 @@
     .fontsize1 {
         font-size: 16px;
         font-weight: 500;
+        color: rgba(0, 0, 0, 0.521);
+
+    }
+    .fontsize2 {
+        font-size: 14px;
         color: rgba(0, 0, 0, 0.521);
 
     }
@@ -178,6 +184,14 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 </script>
     @yield('script')
+    <script src="https://unpkg.com/feather-icons"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    if (window.feather) {
+        feather.replace();
+    }
+});
+</script>
 </body>
 
 </html>

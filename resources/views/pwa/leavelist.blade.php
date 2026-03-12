@@ -130,36 +130,36 @@ table.dataTable {
 <div class="container-fluid mt-4">
     <div class="row">
         <div class="col-12">
-            <div class="d-flex flex-row justify-center align-items-center mt-4">
-                <a href="{{ route('pwa.leaves.create') }}" class="btn" style="border-radius:10px">Apply leave</a>
+            <div class="d-flex flex-row justify-center align-items-center mt-4 font-aneka">
+                <a href="{{ route('pwa.leaves.create') }}" class="btn font-aneka" style="border-radius:10px">Apply leave</a>
                 <!-- <a href="{{ route('pwa.leaves.index') }}?available=1" class="btn" style="border-radius:10px">My Leaves</a> -->
             </div>
             <div class="container mt-3 mb-3">
                 <div class="card shadow-sm">
                     <div class="card-header bg-white">
-                        <h4 class="mb-0 fw-bold text-center">My Leaves</h4>
+                        <h4 class="mb-0 fw-bold text-center font-aneka">My Leaves</h4>
                     </div>
 
                     <div class="card-body">
-                        <div class="row g-3">
+                        <div class="row g-3" style="margin-bottom: 0px !important;">
 
                             <!-- Screen 1 -->
                             @foreach($types as $type)
                             <div class="col-md-4">
-                                <div class="card p-3 text-center mb-0 shadow-sm hover-shadow">
+                                <div class="card text-center mb-0 shadow-sm hover-shadow font-aneka">
                                     <h4>{{$type->name}}</h4>
 
 
                                     <div class="row mt-2 text-center">
 
                                         <div class="col-6">
-                                            <small class="text-muted">Taken</small><br>
-                                            <span class="badge bg-danger px-3">{{$type->taken}}</span>
+                                            <small class="text-dark font-aneka">Taken</small><br>
+                                            <span class="badge bg-danger px-3 font-aneka">{{$type->taken}}</span>
                                         </div>
 
                                         <div class="col-6">
-                                            <small class="text-muted">Remaining</small><br>
-                                            <span class="badge bg-success px-3">{{$type->total - $type->taken}}</span>
+                                            <small class="text-dark font-aneka">Remaining</small><br>
+                                            <span class="badge bg-success px-3 font-aneka">{{$type->total - $type->taken}}</span>
                                         </div>
 
                                     </div>
@@ -172,7 +172,7 @@ table.dataTable {
             </div>
 
             <div class="card shadow-sm mb-2" style="border-radius:16px; overflow:hidden;">
-                <div class="card-header fw-bold d-flex align-items-center gap-2"
+                <div class="card-header fw-bold d-flex align-items-center gap-2 font-aneka fs-6"
                     style="background:#0c3040;color:white;">
                     <i class="bi bi-calendar-check"></i> Leave Entries
                 </div>
@@ -181,28 +181,28 @@ table.dataTable {
                     <!-- Leave Entry Example -->
                     <div class="border-bottom p-3">
                         <div class="d-flex justify-content-between">
-                            <span class="text-muted">Leave Date</span>
-                            <span class="fw-semibold">01-Mar-2026</span>
+                            <span class="text-dark font-aneka">Leave Date</span>
+                            <span class="fw-semibold font-aneka">01-Mar-2026</span>
                         </div>
                         <div class="d-flex justify-content-between mt-2">
-                            <span class="text-muted">Duration</span>
-                            <span class="fw-semibold">Single Day</span>
+                            <span class="text-dark font-aneka">Duration</span>
+                            <span class="fw-semibold font-aneka">Single Day</span>
                         </div>
                         <div class="d-flex justify-content-between mt-2">
-                            <span class="text-muted">Leave Type</span>
-                            <span class="fw-semibold">Sick Leave</span>
+                            <span class="text-dark font-aneka">Leave Type</span>
+                            <span class="fw-semibold font-aneka">Sick Leave</span>
                         </div>
                         <div class="d-flex justify-content-between mt-2">
-                            <span class="text-muted">Leave Status</span>
-                            <span class="badge bg-success fw-semibold">Approved</span>
+                            <span class="text-dark font-aneka">Leave Status</span>
+                            <span class="badge bg-success fw-semibold font-aneka">Approved</span>
                         </div>
                         <div class="d-flex justify-content-between mt-2">
-                            <span class="text-muted">Paid</span>
-                            <span class="fw-semibold">Yes</span>
+                            <span class="text-dark font-aneka">Paid</span>
+                            <span class="fw-semibold font-aneka">Yes</span>
                         </div>
                         <div class="d-flex gap-2 mt-3 justify-content-end">
-                            <a href="#" class="btn btn-sm btn-primary">View</a>
-                            <a href="#" class="btn btn-sm btn-secondary">Edit</a>
+                            <a href="#" class="btn btn-sm btn-primary font-aneka">View</a>
+                            <a href="#" class="btn btn-sm btn-secondary font-aneka">Edit</a>
                         </div>
                     </div>
                     <!-- Repeat the above block for more leave entries -->

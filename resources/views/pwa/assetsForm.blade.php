@@ -100,8 +100,10 @@ textarea {
 @section('content')
 <div class="page-title page-title-small">
     <h2 class="font-aneka"><a href="#" data-back-button><i class="fa fa-arrow-left"></i></a>Asset Form</h2>
-    <a href="#" data-menu="menu-main" class="bg-fade-highlight-light shadow-xl preload-img"
-        data-src="https://cdn.pixabay.com/photo/2015/03/04/22/35/avatar-659652_1280.png"></a>
+    <a href="#" data-menu="menu-main" class="bg-fade-highlight-light shadow-xl preload-img">
+        <img src="https://cdn.pixabay.com/photo/2015/03/04/22/35/avatar-659652_1280.png"
+             style="width:40px;height:40px;border-radius:50%;">
+    </a>
 </div>
 <div class="card header-card shape-rounded" data-card-height="90">
     <div class="card-overlay bg-highlight opacity-95"></div>

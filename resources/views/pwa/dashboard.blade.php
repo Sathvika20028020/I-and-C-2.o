@@ -39,9 +39,9 @@
  </style>
  @endsection
  @section('content')
- <div class="page-title page-title-small">
-     <h2><a href="#" data-back-button><i
-                 class="fa fa-arrow-left"></i></a>{{ auth()->guard('pwauser')->user()->employee?->post_district }}</h2>
+ <div class="page-title page-title-small font-aneka">
+     <h2 class="font-aneka"><a href="#" data-back-button><i
+                 class="fa fa-arrow-left "></i></a>{{ auth()->guard('pwauser')->user()->employee?->post_district }}</h2>
      <a href="#" data-menu="menu-main" class="bg-fade-highlight-light shadow-xl preload-img"
          data-src="https://cdn.pixabay.com/photo/2015/03/04/22/35/avatar-659652_1280.png"></a>
  </div>
@@ -59,18 +59,16 @@
          <!-- Welcome Section -->
          <div class="text-center mb-2" style="margin-top:5px;">
              <h4 class="font-aneka" style="font-weight:900;color:#183b4a;">
-                 Hello User 👋
+                 Hello Sathvika
              </h4>
-             <p class="font-aneka fontsize1" style="color:#555;margin-bottom:5px;">
-                 Welcome to the dashboard. Access your profile, assets, applications, and track status easily.
-             </p>
+            
          </div>
          <!-- Profile -->
          <div class="col-6 ">
              <a href="{{url('/pwa/profile')}}" class="card p-2"
                  style="border-radius:10px;border:1px solid #183b4a87 !important;box-shadow:0 0px 8px 0 #183b4a54;">
 
-                 <i class="bi bi-person-circle" style="font-size:28px;color:#183b4a;"></i>
+                 <i class="bi bi-person-circle" style="font-size:20px;color:#183b4a;"></i>
                  <span class="font-aneka fontsize d-block mt-1">Profile</span>
 
              </a>
@@ -82,7 +80,7 @@
              <a href="{{ route('pwa.category') }}" class="card p-2"
                  style="border-radius:10px;border:1px solid #183b4a87 !important;box-shadow:0 0px 8px 0 #183b4a54;">
 
-                 <i class="bi bi-box-seam" style="font-size:28px;color:#183b4a;"></i>
+                 <i class="bi bi-box-seam" style="font-size:20px;color:#183b4a;"></i>
                  <span class="font-aneka fontsize d-block mt-1">Assets</span>
 
              </a>
@@ -94,7 +92,7 @@
              <a href="" class="card p-2"
                  style="border-radius:10px;border:1px solid #183b4a87 !important;box-shadow:0 0px 8px 0 #183b4a54;">
 
-                 <i class="bi bi-pencil-square" style="font-size:28px;color:#183b4a;"></i>
+                 <i class="bi bi-pencil-square" style="font-size:20px;color:#183b4a;"></i>
                  <span class="font-aneka fontsize d-block mt-1">Apply</span>
 
              </a>
@@ -105,7 +103,7 @@
              <a href="" class="card p-2"
                  style="border-radius:10px;border:1px solid #183b4a87 !important;box-shadow:0 0px 8px 0 #183b4a54;">
 
-                 <i class="bi bi-clipboard-check" style="font-size:28px;color:#183b4a;"></i>
+                 <i class="bi bi-clipboard-check" style="font-size:20px;color:#183b4a;"></i>
                  <span class="font-aneka fontsize d-block mt-1">Status</span>
 
              </a>

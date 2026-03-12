@@ -90,37 +90,37 @@
         <!-- PERSONAL DETAILS -->
         <div class="card shadow-sm mb-2" style="border-radius:16px; overflow:hidden;">
 
-            <div class="card-header fw-bold d-flex align-items-center gap-2" style="background:#0c3040;color:white;">
+            <div class="card-header fw-bold d-flex align-items-center gap-2 font-aneka fs-6" style="background:#0c3040;color:white;">
                 <i class="bi bi-person"></i> Personal Details
             </div>
 
             <div class="card-body p-0">
 
                 <div class="d-flex justify-content-between border-bottom p-3">
-                    <span class="text-muted ">Salutation</span>
-                    <span class="fw-semibold">{{$employee->salutation ?? 'N/A'}}</span>
+                    <span class="text-dark font-aneka">Salutation</span>
+                    <span class="fw-semibold font-aneka">{{$employee->salutation ?? 'N/A'}}</span>
                 </div>
 
                 <div class="d-flex justify-content-between border-bottom p-3">
-                    <span class="text-muted">Name</span>
-                    <span class="fw-semibold">{{$employee->emp_name ?? 'N/A'}}</span>
+                    <span class="text-dark font-aneka">Name</span>
+                    <span class="fw-semibold font-aneka">{{$employee->emp_name ?? 'N/A'}}</span>
                 </div>
 
                 <div class="d-flex justify-content-between border-bottom p-3">
-                    <span class="text-muted">Gender</span>
-                    <span class="fw-semibold">{{$employee->gender ?? 'N/A'}}</span>
+                    <span class="text-dark font-aneka">Gender</span>
+                    <span class="fw-semibold font-aneka">{{$employee->gender ?? 'N/A'}}</span>
                 </div>
 
                 <div class="d-flex justify-content-between border-bottom p-3">
-                    <span class="text-muted">DOB</span>
-                    <span class="fw-semibold">
+                    <span class="text-dark font-aneka">DOB</span>
+                    <span class="fw-semibold font-aneka">
                         {{$employee->dob ? date('d-m-Y', strtotime($employee->dob)) : 'N/A'}}
                     </span>
                 </div>
 
                 <div class="d-flex justify-content-between p-3">
-                    <span class="text-muted">Phone</span>
-                    <span class="fw-semibold">{{$employee->phone ?? 'N/A'}}</span>
+                    <span class="text-dark font-aneka">Phone</span>
+                    <span class="fw-semibold font-aneka">{{$employee->phone ?? 'N/A'}}</span>
                 </div>
 
             </div>
@@ -130,20 +130,20 @@
         <!-- ADDRESS -->
         <div class="card shadow-sm mb-2" style="border-radius:16px; overflow:hidden;">
 
-            <div class="card-header fw-bold d-flex align-items-center gap-2" style="background:#0c3040;color:white;">
+            <div class="card-header fw-bold d-flex align-items-center gap-2 font-aneka fs-6" style="background:#0c3040;color:white;">
                 <i class="bi bi-geo-alt"></i> Address
             </div>
 
             <div class="card-body p-0">
 
                 <div class="d-flex justify-content-between border-bottom p-3">
-                    <span class="text-muted">Permanent Address</span>
-                    <span class="fw-semibold">{{$employee->address ?? 'N/A'}}</span>
+                    <span class="text-dark font-aneka">Permanent Address</span>
+                    <span class="fw-semibold font-aneka">{{$employee->address ?? 'N/A'}}</span>
                 </div>
 
                 <div class="d-flex justify-content-between p-3">
-                    <span class="text-muted">Office Address</span>
-                    <span class="fw-semibold">{{$employee->temp_address ?? 'N/A'}}</span>
+                    <span class="text-dark font-aneka">Office Address</span>
+                    <span class="fw-semibold font-aneka">{{$employee->temp_address ?? 'N/A'}}</span>
                 </div>
 
             </div>
@@ -153,25 +153,25 @@
         <!-- CASTE -->
         <div class="card shadow-sm mb-2" style="border-radius:16px; overflow:hidden;">
 
-            <div class="card-header fw-bold d-flex align-items-center gap-2" style="background:#0c3040;color:white;">
+            <div class="card-header fw-bold d-flex align-items-center gap-2 font-aneka fs-6" style="background:#0c3040;color:white;">
                 <i class="bi bi-people"></i> Caste Details
             </div>
 
             <div class="card-body p-0">
 
                 <div class="d-flex justify-content-between border-bottom p-3">
-                    <span class="text-muted">Category</span>
-                    <span class="fw-semibold">{{$employee->category ?? 'N/A'}}</span>
+                    <span class="text-dark font-aneka">Category</span>
+                    <span class="fw-semibold font-aneka">{{$employee->category ?? 'N/A'}}</span>
                 </div>
 
                 <div class="d-flex justify-content-between border-bottom p-3">
-                    <span class="text-muted">Caste</span>
-                    <span class="fw-semibold">{{$employee->sub_category ?? 'N/A'}}</span>
+                    <span class="text-dark font-aneka">Caste</span>
+                    <span class="fw-semibold font-aneka">{{$employee->sub_category ?? 'N/A'}}</span>
                 </div>
 
                 <div class="d-flex justify-content-between p-3">
-                    <span class="text-muted">Sub Caste</span>
-                    <span class="fw-semibold">{{$employee->sub_caste ?? 'N/A'}}</span>
+                    <span class="text-dark font-aneka">Sub Caste</span>
+                    <span class="fw-semibold font-aneka">{{$employee->sub_caste ?? 'N/A'}}</span>
                 </div>
 
             </div>
@@ -181,27 +181,27 @@
         <!-- SERVICE DETAILS -->
         <div class="card shadow-sm mb-2" style="border-radius:16px; overflow:hidden;">
 
-            <div class="card-header fw-bold d-flex align-items-center gap-2" style="background:#0c3040;color:white;">
+            <div class="card-header fw-bold d-flex align-items-center gap-2 font-aneka fs-6" style="background:#0c3040;color:white;">
                 <i class="bi bi-briefcase"></i> Service Details
             </div>
 
             <div class="card-body p-0">
 
                 <div class="d-flex justify-content-between border-bottom p-3">
-                    <span class="text-muted">Date of Joining</span>
-                    <span class="fw-semibold">
+                    <span class="text-dark font-aneka">Date of Joining</span>
+                    <span class="fw-semibold font-aneka">
                         {{$employee->doj ? date('d-m-Y', strtotime($employee->doj)) : 'N/A'}}
                     </span>
                 </div>
 
                 <div class="d-flex justify-content-between border-bottom p-3">
-                    <span class="text-muted">KGID</span>
-                    <span class="fw-semibold">{{$employee->kgid ?? 'N/A'}}</span>
+                    <span class="text-dark font-aneka">KGID</span>
+                    <span class="fw-semibold font-aneka">{{$employee->kgid ?? 'N/A'}}</span>
                 </div>
 
                 <div class="d-flex justify-content-between p-3">
-                    <span class="text-muted">HK / RPC</span>
-                    <span class="fw-semibold">{{$employee->HK ?? 'N/A'}}</span>
+                    <span class="text-dark font-aneka">HK / RPC</span>
+                    <span class="fw-semibold font-aneka">{{$employee->HK ?? 'N/A'}}</span>
                 </div>
 
             </div>
@@ -211,40 +211,40 @@
         <!-- POSTING DETAILS -->
         <div class="card shadow-sm mb-2" style="border-radius:16px; overflow:hidden;">
 
-            <div class="card-header fw-bold d-flex align-items-center gap-2" style="background:#0c3040;color:white;">
+            <div class="card-header fw-bold d-flex align-items-center gap-2 font-aneka fs-6" style="background:#0c3040;color:white;">
                 <i class="bi bi-building"></i> Posting Details
             </div>
 
             <div class="card-body p-0">
 
                 <div class="d-flex justify-content-between border-bottom p-3">
-                    <span class="text-muted">Post Held</span>
-                    <span class="fw-semibold">{{$employee->post_held ?? 'N/A'}}</span>
+                    <span class="text-dark font-aneka">Post Held</span>
+                    <span class="fw-semibold font-aneka">{{$employee->post_held ?? 'N/A'}}</span>
                 </div>
 
                 <div class="d-flex justify-content-between border-bottom p-3">
-                    <span class="text-muted">Designation</span>
-                    <span class="fw-semibold">{{$employee->post_designation ?? 'N/A'}}</span>
+                    <span class="text-dark font-aneka">Designation</span>
+                    <span class="fw-semibold font-aneka">{{$employee->post_designation ?? 'N/A'}}</span>
                 </div>
 
                 <div class="d-flex justify-content-between border-bottom p-3">
-                    <span class="text-muted">Organization</span>
-                    <span class="fw-semibold">{{$employee->post_organization ?? 'N/A'}}</span>
+                    <span class="text-dark font-aneka">Organization</span>
+                    <span class="fw-semibold font-aneka">{{$employee->post_organization ?? 'N/A'}}</span>
                 </div>
 
                 <div class="d-flex justify-content-between border-bottom p-3">
-                    <span class="text-muted">District</span>
-                    <span class="fw-semibold">{{$employee->post_district ?? 'N/A'}}</span>
+                    <span class="text-dark font-aneka">District</span>
+                    <span class="fw-semibold font-aneka">{{$employee->post_district ?? 'N/A'}}</span>
                 </div>
 
                 <div class="d-flex justify-content-between border-bottom p-3">
-                    <span class="text-muted">Taluk</span>
-                    <span class="fw-semibold">{{$employee->post_taluk ?? 'N/A'}}</span>
+                    <span class="text-dark font-aneka">Taluk</span>
+                    <span class="fw-semibold font-aneka">{{$employee->post_taluk ?? 'N/A'}}</span>
                 </div>
 
                 <div class="d-flex justify-content-between p-3">
-                    <span class="text-muted">Pay Scale</span>
-                    <span class="fw-semibold">{{$employee->post_pay_scale ?? 'N/A'}}</span>
+                    <span class="text-dark font-aneka">Pay Scale</span>
+                    <span class="fw-semibold font-aneka">{{$employee->post_pay_scale ?? 'N/A'}}</span>
                 </div>
 
             </div>
@@ -254,27 +254,27 @@
         <!-- SPOUSE DETAILS -->
         <div class="card shadow-sm mb-2" style="border-radius:16px; overflow:hidden;">
 
-            <div class="card-header fw-bold d-flex align-items-center gap-2" style="background:#0c3040;color:white;">
+            <div class="card-header fw-bold d-flex align-items-center gap-2 font-aneka fs-6" style="background:#0c3040;color:white;">
                 <i class="bi bi-heart"></i> Spouse Details
             </div>
 
             <div class="card-body p-0">
 
                 <div class="d-flex justify-content-between border-bottom p-3">
-                    <span class="text-muted">Married</span>
-                    <span class="fw-semibold">{{$employee->is_married ?? 'N/A'}}</span>
+                    <span class="text-dark font-aneka">Married</span>
+                    <span class="fw-semibold font-aneka">{{$employee->is_married ?? 'N/A'}}</span>
                 </div>
 
                 @if($employee->is_married == 'Yes')
 
                 <div class="d-flex justify-content-between border-bottom p-3">
-                    <span class="text-muted">Name</span>
-                    <span class="fw-semibold">{{$employee->spouse_name}}</span>
+                    <span class="text-dark font-aneka">Name</span>
+                    <span class="fw-semibold font-aneka">{{$employee->spouse_name}}</span>
                 </div>
 
                 <div class="d-flex justify-content-between p-3">
-                    <span class="text-muted">Phone</span>
-                    <span class="fw-semibold">{{$employee->spouse_phone}}</span>
+                    <span class="text-dark font-aneka">Phone</span>
+                    <span class="fw-semibold font-aneka">{{$employee->spouse_phone}}</span>
                 </div>
 
                 @endif
@@ -286,25 +286,25 @@
         <!-- NOMINEE -->
         <div class="card shadow-sm mb-2" style="border-radius:16px; overflow:hidden;">
 
-            <div class="card-header fw-bold d-flex align-items-center gap-2" style="background:#0c3040;color:white;">
+            <div class="card-header fw-bold d-flex align-items-center gap-2 font-aneka fs-6" style="background:#0c3040;color:white;">
                 <i class="bi bi-person-check"></i> Nominee Details
             </div>
 
             <div class="card-body p-0">
 
                 <div class="d-flex justify-content-between border-bottom p-3">
-                    <span class="text-muted">Name</span>
-                    <span class="fw-semibold">{{$employee->nominee_name ?? 'N/A'}}</span>
+                    <span class="text-dark font-aneka">Name</span>
+                    <span class="fw-semibold font-aneka">{{$employee->nominee_name ?? 'N/A'}}</span>
                 </div>
 
                 <div class="d-flex justify-content-between border-bottom p-3">
-                    <span class="text-muted">Gender</span>
-                    <span class="fw-semibold">{{$employee->nominee_gender ?? 'N/A'}}</span>
+                    <span class="text-dark font-aneka">Gender</span>
+                    <span class="fw-semibold font-aneka">{{$employee->nominee_gender ?? 'N/A'}}</span>
                 </div>
 
                 <div class="d-flex justify-content-between p-3">
-                    <span class="text-muted">Relationship</span>
-                    <span class="fw-semibold">{{$employee->nominee_relation ?? 'N/A'}}</span>
+                    <span class="text-dark font-aneka">Relationship</span>
+                    <span class="fw-semibold font-aneka">{{$employee->nominee_relation ?? 'N/A'}}</span>
                 </div>
 
             </div>
@@ -343,7 +343,7 @@ right:20px;
 z-index:9999;
 ">
 
-        <a href="{{ route('pwa.profile.edit') }}" class="btn btn-primary d-flex align-items-center gap-2"
+        <a href="{{ route('pwa.profile.edit') }}" class="btn btn-primary d-flex align-items-center gap-2 font-aneka"
             style="border-radius:30px;padding:10px 18px;box-shadow:0 4px 12px rgba(0,0,0,0.25);">
 
             <i class="bi bi-pencil"></i>

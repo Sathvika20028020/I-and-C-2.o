@@ -28,7 +28,7 @@
  @endsection
  @section('content')
  <div class="page-title page-title-small">
-     <h2><a href="#" data-back-button><i
+     <h2 class="font-aneka"><a href="#" data-back-button><i
                  class="fa fa-arrow-left"></i></a>{{ auth()->guard('pwauser')->user()->employee?->post_district }}</h2>
      <a href="#" data-menu="menu-main" class="bg-fade-highlight-light shadow-xl preload-img"
          data-src="https://cdn.pixabay.com/photo/2015/03/04/22/35/avatar-659652_1280.png"></a>

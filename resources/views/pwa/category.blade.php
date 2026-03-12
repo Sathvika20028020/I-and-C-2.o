@@ -22,8 +22,8 @@
  </style>
  @endsection
  @section('content')
- <div class="page-title page-title-small">
-     <h2><a href="#" data-back-button><i
+ <div class="page-title page-title-small font-aneka">
+     <h2 class="font-aneka"><a href="#" data-back-button><i
                  class="fa fa-arrow-left"></i></a>{{ auth()->guard('pwauser')->user()->employee?->post_district }}</h2>
      <a href="#" data-menu="menu-main" class="bg-fade-highlight-light shadow-xl preload-img"
          data-src="https://cdn.pixabay.com/photo/2015/03/04/22/35/avatar-659652_1280.png"></a>
@@ -39,7 +39,7 @@
 
  <div class="d-flex flex-column gap-2 mt-4">
      <div class="d-flex flex-column align-items-center  mt-3">
-         <a class="btn btn-primary" style="border-radius:20px" href="{{ route('asset-inventory.create') }}">Asset
+         <a class="btn btn-primary font-aneka" style="border-radius:20px" href="{{ route('asset-inventory.create') }}">Asset
              Form</a>
      </div>
 
